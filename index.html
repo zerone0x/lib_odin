@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lib of Odin</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1>Lib of Odin</h1>
+
+<button id="add">Add book</button>
+<dialog id="dialog">
+    <button id="close">X</button>
+    <h2>Add a book</h2>
+    <form id="form" method="dialog">
+        <label for="newtitle">Title</label><br> 
+        <input type="text" id="newtitle" placeholder="Title">
+        <label for="newauthor">Author</label><br>
+        <input type="text" id="newauthor" placeholder="Author">
+        <label for="newpages">Pages</label><br>
+        <input type="number" id="newpages" placeholder="Pages">
+        <label for="readstatus">Read Status</label><br>
+        <input type="radio" id="toread" name="readstatus" value="Not read">
+        <label for="toread">Not Read</label>
+        <input type="radio" id="reading" name="readstatus" value="Reading">
+        <label for="reading">Reading</label>
+        <input type="radio" id="read" name="readstatus" value="Read">
+        <label for="read">Read</label>
+        <button type="submit" id="submit">Submit</button>
+    </form></dialog>
+
+
+<div id="bookshelf">
+    </div>
+</body>
+<!-- <footer>Created by dot@2024</footer> -->
+
+<script src="script.js"></script>
+</html>
