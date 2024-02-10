@@ -11,22 +11,43 @@ closeBtn.addEventListener('click', () => {
     dialog.close()
 })
 
-// radioBtn = document.getElementByName('read_status')
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.info = () => {
-    console.log( `${title} by ${author}, ${pages} pages, ${read}`);
-  }
+// function Book(title, author, pages, read) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.read = read;
+//   this.info = () => {
+//     console.log( `${title} by ${author}, ${pages} pages, ${read}`);
+//   }
+// }
+
+class Book {
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+  
+    info(){
+        console.log( `${title} by ${author}, ${pages} pages, ${read}`);
+    }
 }
 
+class probook extends Book {
+    constructor(title, author, pages, read, price){
+        super(title, author, pages, read);
+        this.price = price;
+    }
+}
+
+book = new probook('The Hobbit', 'J.R.R. Tolkien', 295, 'Not read', 20)
+
 function addBookToLibrary(title, author, pages, read) {
-  const book = new Book(title, author, pages, read);
-  book.info();
-  myLib.push(book);
+    const book = new Book(title, author, pages, read);
+    // book.info();
+    myLib.push(book);
 }
 
 
@@ -84,31 +105,8 @@ function displaybooks(myLib){
         newbook.appendChild(book_title)
         newbook.appendChild(author)
         newbook.appendChild(pages)
-        // newbook.appendChild(read)
         let options = ['Not read', 'Reading', 'Read']
         
-        // options.forEach((option) =>{
-        //     let radio = document.createElement('input')
-        //     let label = document.createElement('label')
-        //     radio.type = 'radio'
-        //     radio.name = title_id
-        //     radio.value = option
-        //     radio.id = title_id + option
-        //     label.htmlFor = radio.id
-        //     label.textContent = option
-        //     if (i.read === option){
-        //         radio.checked =true;
-        //     }
-        //     newbook.appendChild(radio);
-        //     newbook.appendChild(label);
-            
-        //     (function(title_id){(radio.addEventListener('change', function(){
-        //         const index = myLib.findIndex(book => book.title === title_id)
-        //         myLib[index].read = this.value
-        //         console.log(myLib[index].read)
-        //         console.log(myLib)
-        //     }))})(i.title)
-        // })
         options.forEach((option) =>{
             let radio = document.createElement('input');
             let label = document.createElement('label');
