@@ -57,8 +57,15 @@ addBookToLibrary('The Two Towers', 'J.R.R. Tolkien', 352, 'Not read');
 addBookToLibrary('The Return of the King', 'J.R.R. Tolkien', 416, 'Not read');
 
 const submit = document.getElementById('submit')
-submit.addEventListener('click', transferBookFromFormToLib)
 
+document.querySelector('form').addEventListener('submit', function(event) {
+    if (!event.target.checkValidity()) {
+        event.preventDefault(); // 阻止表单提交
+        alert('请填写表单！');
+    }else{
+        submit.addEventListener('click', transferBookFromFormToLib)
+    }
+}, false);
 function transferBookFromFormToLib(){
     var title = document.getElementById('newtitle')
     console.log(title.value)

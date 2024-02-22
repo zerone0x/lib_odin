@@ -12,11 +12,11 @@
 <dialog id="dialog">
     <button id="close">X</button>
     <h2>Add a book</h2>
-    <form id="form" method="dialog">
+    <form id="form" method="post" novalidate>
         <label for="newtitle">Title</label><br> 
-        <input type="text" id="newtitle" placeholder="Title">
+        <input type="text" id="newtitle" placeholder="Title" required>
         <label for="newauthor">Author</label><br>
-        <input type="text" id="newauthor" placeholder="Author">
+        <input type="text" id="newauthor" placeholder="Author" required>
         <label for="newpages">Pages</label><br>
         <input type="number" id="newpages" placeholder="Pages">
         <label for="readstatus">Read Status</label><br>
@@ -26,7 +26,7 @@
         <label for="reading">Reading</label>
         <input type="radio" id="read" name="readstatus" value="Read">
         <label for="read">Read</label>
-        <button type="submit" id="submit">Submit</button>
+        <button type="submit" id="submit" validate>Submit</button>
     </form></dialog>
 
 
